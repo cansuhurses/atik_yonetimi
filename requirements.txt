@@ -5,3 +5,4 @@ streamlit_folium==0.1.1
 streamlit==0.78.0
 geopandas==0.8.1
 Pillow==8.1.2
+xlrd==1.0.0
