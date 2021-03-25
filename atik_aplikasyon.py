@@ -260,7 +260,7 @@ row5_0, row5_1 = st.beta_columns([1, 1])
 
 with row5_0:
     tarihh = st.text_input('Analiz etmek istediğiniz günü seçiniz:', value = '2021-02-01')
-    fig2 = px.scatter(rota_net[rota_net['Tarih'] == tarihh], x="km", y="Net (Atık)", color = 'Araç', size = 'co2', range_y = [0, 38000],
+    fig2 = px.scatter(rota_net[rota_net['Tarih'] == tarihh].drop_duplicates(subset='Araç'), x="km", y="Net (Atık)", color = 'Araç', size = 'co2', range_y = [0, 38000],
                 range_x = [0, 205],
                 template = 'none',
                 labels={
@@ -295,7 +295,7 @@ with row5_0:
     st.plotly_chart(fig2)
 with row5_1:
     tarihh1 = st.text_input('Kıyaslamak istediğiniz günü seçiniz:', value = '2021-02-02')
-    fig2 = px.scatter(rota_net[rota_net['Tarih'] == tarihh1], x="km", y="Net (Atık)", color = 'Araç', size = 'co2', range_y = [0, 38000],
+    fig2 = px.scatter(rota_net[rota_net['Tarih'] == tarihh1].drop_duplicates(subset='Araç'), x="km", y="Net (Atık)", color = 'Araç', size = 'co2', range_y = [0, 38000],
                 range_x = [0, 205],
                 template = 'none',
                 labels={
